@@ -11,7 +11,7 @@ const NavBar = () =>{
             <a style={styles.navegation} href="">Accesorio</a>
             <a style={styles.navegation} href="">Zapatos</a>
         </nav>
-        <a href=""><img src={bolsa} alt="logo zara"  style={styles.img}/></a>
+        <a href=""><img src={bolsa} alt="logo zara"  style={styles.imgshopp}/></a>
         </header>
     )
 }
@@ -38,6 +38,12 @@ const styles = {
     navegation: {
         justifyContent: 'space-between',
         texteAlign: 'center',
-        margin: 10
+        margin: 10,
+    },
+
+    imgshopp: {
+        width: 25,
+        height: 25,
+        margin: 50,
     }
 }
