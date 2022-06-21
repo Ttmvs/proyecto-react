@@ -24,7 +24,6 @@ export const ItemCount = ({stock, initial, onAdd}) =>{
         }
     }
 
-
     return(
         <>
         <p>{producto}</p>
