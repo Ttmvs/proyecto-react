@@ -1,16 +1,14 @@
 import './App.css';
 import NavBar from './Components/NavBar';
-import Item from './Components/ItemListContainer';
-import { ItemCount } from  './Components/ItemCount';
+import ItemListContainer from './Components/ItemListContainer';
 
 const App = () => {
   let stock = 5;
   return (
     <>
     <NavBar />
-    <Item value='Mensaje Predeterminado' />
-    <ItemCount stock={stock} />
-    </>
+    <ItemListContainer value='Mensaje Predeterminado' />
+      </>
   
   );
 }

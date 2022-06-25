@@ -1,40 +1,60 @@
-import React, { useState } from 'react'
+import React, {useState} from "react";
 
 
-export const ItemCount = ({stock, initial, onAdd}) =>{
+const ItemCount = ({ stock, initial, onAdd}) =>{
+    const [Producto, setProducto] = useState(initial)
 
-    const [producto, setProducto] = useState(0);
-    //let value = 1;
+    const sumar = () =>{
+    Producto < stock && setProducto(Producto + 1)
+    Producto >= stock && alert('No hay suficiente stock del producto')
+}
 
-    const handlerClick = (evt) =>{
-        setProducto(producto + 1);
-       if (producto > 1 ){
-        console.log('todavia kea')
-       }if (producto <= 5){
-        console.log('no hay')
-       }
-    }
-
-    const minusClick = () =>{
-        setProducto(producto - 1);
-        if (producto <= 0){
-            console.log('no hay más weas')
+    const restar = () =>{
+       setProducto(Math.max(Producto - 1, 0))
         
-        }else{
-        }
     }
+
 
     return(
         <>
-        <p>{producto}</p>
-        <button onClick={minusClick}>-</button>
-        <button onClick={handlerClick}>+</button>
-        <button>Agregar al carrito</button>
+        <div style={styles.container}>
+            <button style={styles.btnMinus} onClick={restar}>-</button>
+            <p style={styles.value}>{Producto}</p>
+            <button style={styles.BtnPlus} onClick={sumar}>+</button>
+        </div>
+        <button style={styles.shop} onClick={onAdd}>Shop</button>
         </>
     )
 }
 
+export default ItemCount
 
+
+const styles = {
+    container: {
+        display: 'flex',
+        alignItems: 'center',
+    },
+
+    shop:{
+        margin: 30,
+        width: 200,
+    },
+    BtnPlus: {
+        marginTop: 100,
+        marginLeft: 50,
+    },
+    btnMinus:{
+        marginTop: 100,
+        marginLeft: 50,
+    },
+    value:{
+        marginTop: 100,
+        marginLeft: 50,
+        fontSize: 20
+        
+    }
+}
 
 
 
