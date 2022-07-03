@@ -1,6 +1,7 @@
 import './App.css';
 import NavBar from './Components/NavBar';
 import ItemListContainer from './Components/ItemListContainer';
+//import AxiosExample from './Components/AxiosExample';
 
 const App = () => {
   let stock = 5;
