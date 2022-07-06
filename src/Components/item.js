@@ -6,8 +6,7 @@ const itemStyle = {
   fontFamily: 'Aleo , serif',
 };
 const styles = {
-height: 80,
-width: 40,
+  maxHeight: "30em",
 }
 
 export default function Item({ elem }) {
@@ -16,7 +15,7 @@ export default function Item({ elem }) {
       <div>
       <h1>{elem.nombre}</h1>
       </div>
-      <p>{elem.url} </p>
+      <img style={styles} src={elem.url}/>
       <h2>{elem.precio}</h2>
       <h3>{elem.description}</h3>
       

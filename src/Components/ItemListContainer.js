@@ -10,21 +10,6 @@ const promesa = new Promise((res, rej) => {
     }, 2000);
   });
 
-/* const ItemListContainer = ({value}) =>{
-
-    const onAdd = () =>{
-        alert('Gracias por comprar')
-    }
-
-    return(
-        <>
-    <p style={styles.container}>{value}</p>
-    <ItemCount initial={0} stock={5} onAdd={onAdd} />
-    </>
-    )
-} */
-
-
 export default function ItemListContainer({value}) {
     const [listaRopa, setListaRopa] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -36,8 +21,8 @@ export default function ItemListContainer({value}) {
     useEffect(() => {
         setLoading(true);
         promesa.then((response) => {
-          setLoading(false);
           setListaRopa(response);
+          setLoading(false);
         });
       }, []);
     

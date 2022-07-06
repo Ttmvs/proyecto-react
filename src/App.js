@@ -1,6 +1,7 @@
 import './App.css';
 import NavBar from './Components/NavBar';
 import ItemListContainer from './Components/ItemListContainer';
+import ItemDetailContainer from './Components/ItemDetailContainer';
 //import AxiosExample from './Components/AxiosExample';
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
     <>
     <NavBar />
     <ItemListContainer value='Mensaje Predeterminado' />
+    <ItemDetailContainer/>
       </>
   
   );
