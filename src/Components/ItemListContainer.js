@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react"
 import ItemCount from "./ItemCount"
-import Ropa from "../data"
+import Ropa from "../data/index"
 import ItemList from "./itemList";
+import { useParams } from "react-router-dom";
 
 
 const promesa = new Promise((res, rej) => {
@@ -11,6 +12,9 @@ const promesa = new Promise((res, rej) => {
   });
 
 export default function ItemListContainer({value}) {
+
+  const {categoryName} = useParams();
+
     const [listaRopa, setListaRopa] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -24,7 +28,7 @@ export default function ItemListContainer({value}) {
           setListaRopa(response);
           setLoading(false);
         });
-      }, []);
+      }, [categoryName]);
     
       if (loading) {
         return (
@@ -49,4 +53,5 @@ const styles = {
         fontFamily: 'Aleo , serif'
     }
 }
+
 
